@@ -1,0 +1,42 @@
+<?php
+function calculateTotalPrice(array $items): float {
+    $total = 0;
+    foreach ($items as $item) {
+        $total += $item['price'];
+    }
+    return $total;
+}
+
+function manipulateString(string $inputString): string {
+    $string = str_replace(' ', '', $inputString);
+    $string = strtolower($string);
+    return $string;
+}
+
+function checkEvenOrOdd(int $number): string {
+    if ($number % 2 == 0) {
+        return "The number {$number} is even.";
+    } else {
+        return "The number {$number} is odd.";
+    }
+}
+
+
+$items = [
+    ['name' => 'Widget A', 'price' => 10],
+    ['name' => 'Widget B', 'price' => 15],
+    ['name' => 'Widget C', 'price' => 20],
+];
+
+$string = "This is a poorly written program with little structure and readability.";
+$number = 42;
+
+$totalPrice = calculateTotalPrice($items);
+echo "Total price: $" . $totalPrice;
+
+$modifiedString = manipulateString($string);
+echo "\nModified string: " . $modifiedString;
+
+
+$result = checkEvenOrOdd($number);
+echo "\n" . $result;
